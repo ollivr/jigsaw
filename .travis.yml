@@ -4,10 +4,15 @@ php:
   - '7.2'
   - '7.1'
 
-os:
-  - linux
-  - osx
-  - windows
+
+matrix:
+    include:
+        - os: linux
+          php: 7.1
+        - os: osx
+          php: 7.2
+        - os: windows
+          php: 7.2
 
 install:
   - travis_retry composer install --no-interaction
